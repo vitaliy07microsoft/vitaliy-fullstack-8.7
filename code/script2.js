@@ -28,6 +28,11 @@ const slide8 = document.querySelector("#swiper-slide-8");
 const slide9 = document.querySelector("#swiper-slide-9");
 const slide10 = document.querySelector("#swiper-slide-10");
 const slide11 = document.querySelector("#swiper-slide-11");
+const allSlides = document.querySelector(".swiper-slide");
+const tabletOpenSlides = Array.from(allSlides).slice(0, 6);
+const tabletCloseSlides = Array.from(allSlides).slice(7, 11);
+const pcOpenSlides = Array.from(allSlides).slice(0, 8);
+const pcOpenSlides = Array.from(allSlides).slice(9, 11);
 
 function checkScreenWidth() {
   if (window.innerWidth <= 1119 && !isOpen768) {
@@ -106,9 +111,3 @@ function showMore() {
   }
 }
 
-
-
-// цель сделать так что когда меняется ширина экрана, скрытие открытых елементов
-// срабатывает только один раз
-// if (window.innerWidth <= 1119 && slide7.className==="swiper-slide-hidden")
-// else if (window.innerWidth >= 1120 && slide11.className==="swiper-slide-hidden")
