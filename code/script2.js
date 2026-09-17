@@ -27,7 +27,7 @@ let isOpen1120 = false;
 // const slide8 = document.querySelector("#swiper-slide-8");
 // const slide9 = document.querySelector("#swiper-slide-9");
 // const slide10 = document.querySelector("#swiper-slide-10");
-// const slide11 = document.querySelector("#swiper-slide-11");
+const slide11 = document.querySelector("#swiper-slide-11");
 const allSlides = document.querySelectorAll(".swiper-slide");
 const tabletOpenSlides = Array.from(allSlides).slice(0, 6);
 const tabletCloseSlides = Array.from(allSlides).slice(6, 11);
@@ -35,47 +35,31 @@ const pcOpenSlides = Array.from(allSlides).slice(0, 8);
 const pcCloseSlides = Array.from(allSlides).slice(8, 11);
 
 function checkScreenWidth() {
+   if (window.innerWidth <= 767) {
+    isOpen768 = false;
+    isOpen1120 = false;
+  }
+
   if (window.innerWidth <= 1119 && !isOpen768) {
     tabletOpenSlides.forEach((slide) => {
       slide.classList.remove("swiper-slide-hidden");
     });
-    // slide1.classList.remove("swiper-slide-hidden");
-    // slide2.classList.remove("swiper-slide-hidden");
-    // slide3.classList.remove("swiper-slide-hidden");
-    // slide4.classList.remove("swiper-slide-hidden");
-    // slide5.classList.remove("swiper-slide-hidden");
-    // slide6.classList.remove("swiper-slide-hidden");
 
     tabletCloseSlides.forEach((slide) => {
       slide.classList.add("swiper-slide-hidden");
     });
-    // slide7.classList.add("swiper-slide-hidden");
-    // slide8.classList.add("swiper-slide-hidden");
-    // slide9.classList.add("swiper-slide-hidden");
-    // slide10.classList.add("swiper-slide-hidden");
-    // slide11.classList.add("swiper-slide-hidden");
 
     isOpen768 = true;
     isOpen1120 = false;
+
   } else if (window.innerWidth >= 1120 && !isOpen1120) {
     pcOpenSlides.forEach((slide) => {
       slide.classList.remove("swiper-slide-hidden");
     });
-    // slide1.classList.remove("swiper-slide-hidden");
-    // slide2.classList.remove("swiper-slide-hidden");
-    // slide3.classList.remove("swiper-slide-hidden");
-    // slide4.classList.remove("swiper-slide-hidden");
-    // slide5.classList.remove("swiper-slide-hidden");
-    // slide6.classList.remove("swiper-slide-hidden");
-    // slide7.classList.remove("swiper-slide-hidden");
-    // slide8.classList.remove("swiper-slide-hidden");
 
     pcCloseSlides.forEach((slide) => {
       slide.classList.add("swiper-slide-hidden");
     });
-    // slide9.classList.add("swiper-slide-hidden");
-    // slide10.classList.add("swiper-slide-hidden");
-    // slide11.classList.add("swiper-slide-hidden");
 
     isOpen1120 = true;
     isOpen768 = false;
@@ -90,46 +74,24 @@ function showMore() {
     tabletOpenSlides.forEach((slide) => {
       slide.classList.remove("swiper-slide-hidden");
     });
-    // slide1.classList.remove("swiper-slide-hidden");
-    // slide2.classList.remove("swiper-slide-hidden");
-    // slide3.classList.remove("swiper-slide-hidden");
-    // slide4.classList.remove("swiper-slide-hidden");
-    // slide5.classList.remove("swiper-slide-hidden");
-    // slide6.classList.remove("swiper-slide-hidden");
 
     tabletCloseSlides.forEach((slide) => {
       slide.classList.toggle("swiper-slide-hidden");
     });
-    // slide7.classList.toggle("swiper-slide-hidden");
-    // slide8.classList.toggle("swiper-slide-hidden");
-    // slide9.classList.toggle("swiper-slide-hidden");
-    // slide10.classList.toggle("swiper-slide-hidden");
-    // slide11.classList.toggle("swiper-slide-hidden");
 
-    if (!slide7.classList.contains("swiper-slide-hidden")) {
+    if (!slide11.classList.contains("swiper-slide-hidden")) {
       isOpen768 = true;
     }
   } else if (window.innerWidth >= 1120) {
     pcOpenSlides.forEach((slide) => {
       slide.classList.remove("swiper-slide-hidden");
     });
-    // slide1.classList.remove("swiper-slide-hidden");
-    // slide2.classList.remove("swiper-slide-hidden");
-    // slide3.classList.remove("swiper-slide-hidden");
-    // slide4.classList.remove("swiper-slide-hidden");
-    // slide5.classList.remove("swiper-slide-hidden");
-    // slide6.classList.remove("swiper-slide-hidden");
-    // slide7.classList.remove("swiper-slide-hidden");
-    // slide8.classList.remove("swiper-slide-hidden");
 
     pcCloseSlides.forEach((slide) => {
       slide.classList.toggle("swiper-slide-hidden");
     });
-    // slide9.classList.toggle("swiper-slide-hidden");
-    // slide10.classList.toggle("swiper-slide-hidden");
-    // slide11.classList.toggle("swiper-slide-hidden");
 
-    if (!slide9.classList.contains("swiper-slide-hidden")) {
+    if (!slide11.classList.contains("swiper-slide-hidden")) {
       isOpen1120 = true;
     }
   }

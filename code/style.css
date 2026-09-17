@@ -169,10 +169,6 @@ body {
     display: flex;
   }
 
-  .rotate {
-    transform: rotate(180deg);
-  }
-
   .bottom__button--text {
     font-weight: 500;
     font-size: 16px;
