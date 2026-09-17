@@ -33,7 +33,9 @@ const tabletOpenSlides = Array.from(allSlides).slice(0, 6);
 const tabletCloseSlides = Array.from(allSlides).slice(6, 11);
 const pcOpenSlides = Array.from(allSlides).slice(0, 8);
 const pcCloseSlides = Array.from(allSlides).slice(8, 11);
-const bottomButtonText = document.querySelector(".bottom__button--text")
+const bottomButtonImage = document.querySelector(".bottom__button--img");
+const bottomButtonText = document.querySelector(".bottom__button--text");
+
 
 function checkScreenWidth() {
    if (window.innerWidth <= 767) {
@@ -105,7 +107,9 @@ function showMore() {
 function buttonTextChange() {
   if ( slide11.classList.contains("swiper-slide-hidden")){
     bottomButtonText.textContent = "Показать всё";
+    bottomButtonImage.style.transform = "rotate(0deg)";
   } else {
     bottomButtonText.textContent = "Скрыть";
+    bottomButtonImage.style.transform = "rotate(180deg)";
   }
 }
